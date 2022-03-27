@@ -6,13 +6,24 @@ import org.junit.jupiter.api.Test;
 
 public class SortOptionsTest {
 	
+	private String arrayToString(String[] output) {
+		String res = null;
+		for(int i = 0; i < output.length; i++){
+			if (i == 0) {
+				res = output[i];
+			}
+			else {
+				res = res + ", " + output[i];
+			}
+		}
+		return res;
+	}
+	
 	@Test
 	public void bubbleSortAlphabetically() {
 		String[] goal = new String[]{"Buzz", "Fizz", "FizzBuzz"};
 		String[] input = new String[]{"Fizz", "Buzz", "FizzBuzz"};
 		String[] result = SortOptions.bubbleSortAlphabetically(input);
-		assertEquals(goal[0], result[0]);
-		assertEquals(goal[1], result[1]);
-		assertEquals(goal[2], result[2]);
+		assertEquals(arrayToString(goal), arrayToString(result));
 	}
 }

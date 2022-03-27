@@ -203,4 +203,8 @@ public class StringManipulator {
 		}
 		return anglosized;
 	}
+
+	public static boolean stringEquals(String base, String comparison) {
+		return false;
+	}
 }

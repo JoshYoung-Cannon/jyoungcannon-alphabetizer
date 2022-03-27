@@ -1,6 +1,9 @@
 package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
 public class StringManipulatorTest {
@@ -26,5 +29,11 @@ public class StringManipulatorTest {
 	public void StringManipulatorInstanceTest() {
 		StringManipulator SMTest = new StringManipulator();
 		assertEquals(SMTest.getClass(), StringManipulator.class);
+	}
+	
+	@Test
+	public void stringEqualsTest() {
+		assertTrue(StringManipulator.stringEquals("Fizz","Fizz"));
+		assertFalse(StringManipulator.stringEquals("Fizz","Buzz"));
 	}
 }

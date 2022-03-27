@@ -1,4 +1,4 @@
-# jyoungcannon-alphabetizer
+# jyoungcannon-alphabetizer v1.0.0
 
 # QMMS Interview Task202112: Josh Young-Cannon
 

@@ -25,6 +25,8 @@ public class StringManipulator {
 	 */
 	private static String copyStringSegment (String sentence, int lowerBound, int upperBound) {
 		String output = "";
+		// TODO implement error handling e.g. upper & lower bounds being valid
+		
 		for (int i = lowerBound; i < upperBound; i++) {
 			output = output + sentence.charAt(i);
 		}
@@ -45,6 +47,7 @@ public class StringManipulator {
 		output = new String[returnCount];
 		
 		if (returnCount == 1) {
+			// Contains no char to split from, return whole string
 			output[0] = sentence;
 		}
 		else {
@@ -235,6 +238,7 @@ public class StringManipulator {
 	 */
 	public static boolean stringEquals(String base, String comparison) {
 		boolean output = false;
+		// TODO implement error handling e.g. one or more inputs are empty
 		if (base.length() == comparison.length()) {
 			output = true;
 			for (int i = 0; i < base.length(); i++) {

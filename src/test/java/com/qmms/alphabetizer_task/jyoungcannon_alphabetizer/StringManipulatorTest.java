@@ -23,6 +23,7 @@ public class StringManipulatorTest {
 	@Test
 	public void anglosizeString() {
 		assertEquals("aeioussaecmthdny-YNDThCAEAEIOU", StringManipulator.anglosizeString("áéïôúßæçµþðñÿ'-ÝÑÐÞÇÆÂËÎÔÛ"));
+		assertEquals("abc ABC", StringManipulator.anglosizeString("abc ABC"));
 	}
 	
 	@Test

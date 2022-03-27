@@ -2,6 +2,11 @@ package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
 
 public class StringManipulator {
 
+	/**
+	 * @param sentence The string to iterate through
+	 * @param splitChar The specific char to be looked for
+	 * @return The number of time splitChar occurs in the given string
+	 */
 	private static int containsCount(String sentence, char splitChar) {
 		int splitCharCount = 0;
 		for(int i = 0; i < sentence.length(); i++) {
@@ -12,6 +17,12 @@ public class StringManipulator {
 		return splitCharCount;
 	}
 	
+	/**
+	 * @param sentence The string to copy a subset from
+	 * @param lowerBound The start char
+	 * @param upperBound The end char
+	 * @return The string subset defined by the upper & lower bound e.g. inputs ("FizzBuzz", 0, 5) returns "Fizz"
+	 */
 	private static String copyStringSegment (String sentence, int lowerBound, int upperBound) {
 		String output = "";
 		for (int i = lowerBound; i < upperBound; i++) {
@@ -20,6 +31,11 @@ public class StringManipulator {
 		return output;
 	}
 	
+	/**
+	 * @param sentence The string to split
+	 * @param splitChar The specific char to split on
+	 * @return An array of the split values e.g. inputs ("Fizz-Buzz-FizzBuzz",'-') returns {"Fizz", "Buzz", "FizzBuzz"} 
+	 */
 	public static String[] splitString(String sentence, char splitChar){
 		int returnCount, lowerBound = 0, upperBound = 0;
 		String[] output;
@@ -47,6 +63,10 @@ public class StringManipulator {
 		return output;
 	}
 	
+	/**
+	 * @param raw The raw char containing potentially non-English letters
+	 * @return An anglosized version of the input char for alphabetizing e.g. input('ü') returns 'u'
+	 */
 	private static String anglosizeChar(char raw) {
 		String anglosized;
 		switch (raw) {
@@ -195,15 +215,24 @@ public class StringManipulator {
 		return anglosized;
 	}
 	
+	/**
+	 * @param raw The raw string containing non-English letters
+	 * @return A string comprised of best fit chars to simplify alphabetizing e.g. input("München") returns "Munchen"
+	 */
 	public static String anglosizeString(String raw) {
 		String anglosized = "";
 		
 		for(int i = 0; i < raw.length(); i++) {
-			anglosized = anglosized + anglosizeChar(raw.charAt(i));			
+			anglosized = anglosized + anglosizeChar(raw.charAt(i));
 		}
 		return anglosized;
 	}
 
+	/**
+	 * @param base The active string
+	 * @param comparison The string to compare too
+	 * @return True if both strings are identical, false if not e.g. inputs ("Fizz","Fizz") returns true, inputs ("Fizz","Buzz") returns false
+	 */
 	public static boolean stringEquals(String base, String comparison) {
 		boolean output = false;
 		if (base.length() == comparison.length()) {

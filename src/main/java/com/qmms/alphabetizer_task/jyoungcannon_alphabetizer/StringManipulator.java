@@ -1,13 +1,55 @@
 package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
 
 public class StringManipulator {
+	
+	private static int upperCaseMin = 65;
+	private static int upperCaseMax = 90;
+	private static int lowerCaseMin = 97;
+	private static int lowerCaseMax = 122;
+	private static int caseChange = 32;
+	
+	public static boolean isLowerCase(int a) {
+		if (lowerCaseMin <= a && a <= lowerCaseMax) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static boolean isUpperCase(int a) {
+		if (upperCaseMin <= a && a <= upperCaseMax) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static char toLowerCase(int a) {
+		char output;
+		if (isLowerCase(a) || !(isUpperCase(a))) {
+			output = (char) a;
+		}
+		else {
+			output = (char) (a + caseChange);
+		}
+		return output;
+	}
+	
+	public static char toUpperCase(int a) {
+		char output;
+		if (isUpperCase(a) || !(isLowerCase(a))) {
+			output = (char) a;
+		}
+		else {
+			output = (char) (a - caseChange);
+		}
+		return output;
+	}
 
 	/**
 	 * @param sentence The string to iterate through
 	 * @param splitChar The specific char to be looked for
 	 * @return The number of time splitChar occurs in the given string
 	 */
-	private static int containsCount(String sentence, char splitChar) {
+	public static int containsCount(String sentence, char splitChar) {
 		int splitCharCount = 0;
 		for(int i = 0; i < sentence.length(); i++) {
 			if ((int) sentence.charAt(i) == (int) splitChar) {

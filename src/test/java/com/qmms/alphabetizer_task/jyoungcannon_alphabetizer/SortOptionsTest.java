@@ -10,6 +10,9 @@ public class SortOptionsTest {
 	public void bubbleSortAlphabetically() {
 		String[] goal = new String[]{"Buzz", "Fizz", "FizzBuzz"};
 		String[] input = new String[]{"Fizz", "Buzz", "FizzBuzz"};
-		assertEquals(goal, SortOptions.bubbleSortAlphabetically(input));
+		String[] result = SortOptions.bubbleSortAlphabetically(input);
+		assertEquals(goal[0], result[0]);
+		assertEquals(goal[1], result[1]);
+		assertEquals(goal[2], result[2]);
 	}
 }

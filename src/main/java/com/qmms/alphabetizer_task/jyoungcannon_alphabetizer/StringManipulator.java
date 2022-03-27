@@ -205,6 +205,16 @@ public class StringManipulator {
 	}
 
 	public static boolean stringEquals(String base, String comparison) {
-		return false;
+		boolean output = false;
+		if (base.length() == comparison.length()) {
+			output = true;
+			for (int i = 0; i < base.length(); i++) {
+				if (base.charAt(i) != comparison.charAt(i)) {
+					output = false;
+					break;
+				}
+			}
+		}
+		return output;
 	}
 }

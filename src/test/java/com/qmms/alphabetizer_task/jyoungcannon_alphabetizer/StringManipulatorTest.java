@@ -35,5 +35,6 @@ public class StringManipulatorTest {
 	public void stringEqualsTest() {
 		assertTrue(StringManipulator.stringEquals("Fizz","Fizz"));
 		assertFalse(StringManipulator.stringEquals("Fizz","Buzz"));
+		assertFalse(StringManipulator.stringEquals("Fizz","Fizzz"));
 	}
 }

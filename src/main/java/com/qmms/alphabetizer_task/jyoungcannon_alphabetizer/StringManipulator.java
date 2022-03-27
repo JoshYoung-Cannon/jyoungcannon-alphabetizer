@@ -17,7 +17,7 @@ public class StringManipulator {
 	
 	/**
 	 * @param a The char to test to see if it is a lower case character
-	 * @return Returns true if input is a lower case alphabet character e.g. input ('g') returns true, input ('G') returns false
+	 * @return Returns true if input is a lower case alphabet character e.g. input ('g') returns true, input ('G') and ('!') returns false
 	 */
 	public static boolean isLowerCase(int a) {
 		if (lowerCaseMin <= a && a <= lowerCaseMax) {
@@ -28,7 +28,7 @@ public class StringManipulator {
 	
 	/**
 	 * @param a The char to test to see if it is a upper case character
-	 * @return Returns true if input is a upper case alphabet character e.g. input ('G') returns true, input ('g') returns false
+	 * @return Returns true if input is a upper case alphabet character e.g. input ('G') returns true, input ('g') and ('!') returns false
 	 */
 	public static boolean isUpperCase(int a) {
 		if (upperCaseMin <= a && a <= upperCaseMax) {

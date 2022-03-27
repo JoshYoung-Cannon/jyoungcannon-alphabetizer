@@ -38,4 +38,31 @@ public class StringManipulatorTest {
 		assertFalse(StringManipulator.stringEquals("Fizz","Buzz"));
 		assertFalse(StringManipulator.stringEquals("Fizz","Fizzz"));
 	}
+	
+	@Test
+	public void	isLowerCaseTest() {
+		assertTrue(StringManipulator.isLowerCase('g'));
+		assertFalse(StringManipulator.isLowerCase('G'));
+		assertFalse(StringManipulator.isLowerCase('!'));
+	}
+	@Test
+	public void isUpperCaseTest() {
+		assertTrue(StringManipulator.isUpperCase('G'));
+		assertFalse(StringManipulator.isUpperCase('g'));
+		assertFalse(StringManipulator.isUpperCase('!'));
+	}
+	
+	@Test
+	public void toLowerCaseTest() {
+		assertEquals('g',StringManipulator.toLowerCase('G'));
+		assertEquals('g',StringManipulator.toLowerCase('g'));
+		assertEquals('!',StringManipulator.toLowerCase('!'));
+	}
+	
+	@Test
+	public void toUpperCaseTest() {
+		assertEquals('G',StringManipulator.toUpperCase('g'));
+		assertEquals('G',StringManipulator.toUpperCase('G'));
+		assertEquals('!',StringManipulator.toUpperCase('!'));
+	}
 }

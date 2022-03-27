@@ -18,7 +18,7 @@ public class StringManipulatorTest {
     }
 	
 	@Test
-	public void BubbleSortInstanceTest() {
+	public void StringManipulatorInstanceTest() {
 		StringManipulator SMTest = new StringManipulator();
 		assertEquals(SMTest.getClass(), StringManipulator.class);
 	}

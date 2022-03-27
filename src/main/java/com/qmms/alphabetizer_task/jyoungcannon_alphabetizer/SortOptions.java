@@ -44,6 +44,45 @@ public class SortOptions {
 	}
 	
 	/**
+	 * @param a Possibly hyphened string item earlier in the list to be sorted
+	 * @param b Possibly hyphened string item later in the list to be sorted
+	 * @return Returns true if items should be swapped alphabetically, false if not e.g. inputs ('Z-Z','Z-A') returns true, inputs ('A-Z','Z-Z') returns false
+	 */
+	private static boolean hyphenCompareAlphabetically(String a, String b) {
+		int n, countA, countB;
+		char hyphen = '-';
+		boolean swap = false, identical = true;
+		
+		// Prep data
+		String[] hyphenA = StringManipulator.splitString(a, hyphen);
+		countA = StringManipulator.containsCount(a, hyphen) + 1; // +1 to get array size
+		String[] hyphenB = StringManipulator.splitString(b, hyphen);
+		countB = StringManipulator.containsCount(b, hyphen) + 1; // +1 to get array size
+		
+		// Identify how many comparisons are needed
+		if (countA < countB) {
+			n = countA;
+		}
+		else {
+			n = countB;
+		}
+		
+		for (int i = 0; i < n; i++) {
+			if (!StringManipulator.stringEquals(hyphenA[n], hyphenB[n])) {
+				swap = stringCompareAlphabetically(hyphenA[n], hyphenB[n]);
+				identical = false;
+				break;
+			}
+		}
+		
+		// if all compared words are identical, the larger list should be further down the sorted list
+		if (identical && countA > countB) {
+			swap = true;
+		}
+		return swap;
+	}
+	
+	/**
 	 * @param a The earlier string item in a list
 	 * @param b The later string item in a list
 	 * @return Returns true if items should be swapped alphabetically, false if not e.g. inputs ("Zy","Ab") returns true, inputs ("Ab","Zy") returns false
@@ -57,8 +96,7 @@ public class SortOptions {
 		
 		// Handle '-' words
 		if (StringManipulator.containsCount(angloA, '-') > 0 || StringManipulator.containsCount(angloB, '-') > 0) {
-			// TODO Hyphen comparison
-			// hyphenCompareAlphabetically(angloA, angloB)
+			swap = hyphenCompareAlphabetically(angloA, angloB);
 		}
 		else {
 			// Identify longer word

@@ -2,11 +2,15 @@ package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
 
 public class SortOptions {
 	
-	public static boolean charCompareAlphabetically(char a, char b) {
+	/**
+	 * @param a char from earlier item in list to be sorted 
+	 * @param b char from later item in list to be sorted
+	 * @return Returns true if items should be swapped alphabetically, false if not e.g. inputs ('Z','A') returns true, inputs ('A','Z') returns false
+	 */
+	private static boolean charCompareAlphabetically(char a, char b) {
 		int aValue = a, aLower = a, bValue = b, bLower = b;
 		
-		// case limits: A:65<Z:90 < a:97<z:122
-		// Both UpperCase = lesser||equal Z					Both LowerCase: greater||equal a
+		// Both UpperCase || Both LowerCase
 		if ((StringManipulator.isUpperCase(aValue) && StringManipulator.isUpperCase(bValue)) || (StringManipulator.isLowerCase(aValue) && StringManipulator.isLowerCase(bValue))) {
 			
 			if (aValue > bValue) {
@@ -71,6 +75,10 @@ public class SortOptions {
 					decisionChar = i;
 					break;
 				}
+			}
+			// Shorter words are 1st alphabetically
+			if (swap == false && a.length() > b.length() && !(StringManipulator.isUpperCase(angloA.charAt(decisionChar)) && StringManipulator.isLowerCase(angloB.charAt(decisionChar)))) {
+				swap = true;
 			}
 		}
 		

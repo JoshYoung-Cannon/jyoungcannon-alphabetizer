@@ -2,12 +2,23 @@ package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
 
 public class StringManipulator {
 	
+	/**
+	 * upperCaseMin is the ascii value of A
+	 * upperCaseMax is the ascii value of Z
+	 * lowerCaseMin is the ascii value of a
+	 * lowerCaseMax is the ascii value of z
+	 * caseChange is the value needed to convert from one ascii value to another
+	 */
 	private static int upperCaseMin = 65;
 	private static int upperCaseMax = 90;
 	private static int lowerCaseMin = 97;
 	private static int lowerCaseMax = 122;
 	private static int caseChange = 32;
 	
+	/**
+	 * @param a The char to test to see if it is a lower case character
+	 * @return Returns true if input is a lower case alphabet character e.g. input ('g') returns true, input ('G') returns false
+	 */
 	public static boolean isLowerCase(int a) {
 		if (lowerCaseMin <= a && a <= lowerCaseMax) {
 			return true;
@@ -15,6 +26,10 @@ public class StringManipulator {
 		return false;
 	}
 	
+	/**
+	 * @param a The char to test to see if it is a upper case character
+	 * @return Returns true if input is a upper case alphabet character e.g. input ('G') returns true, input ('g') returns false
+	 */
 	public static boolean isUpperCase(int a) {
 		if (upperCaseMin <= a && a <= upperCaseMax) {
 			return true;
@@ -22,6 +37,10 @@ public class StringManipulator {
 		return false;
 	}
 	
+	/**
+	 * @param a The char to convert to lower case
+	 * @return Returns the lower case equivalent of input a, if a is already lower case or not in the alphabet it returns the input e.g. input ('G') & input ('g') returns 'g', input ('!') returns '!'
+	 */
 	public static char toLowerCase(int a) {
 		char output;
 		if (isLowerCase(a) || !(isUpperCase(a))) {
@@ -33,6 +52,10 @@ public class StringManipulator {
 		return output;
 	}
 	
+	/**
+	 * @param a The char to convert to upper case
+	 * @return Returns the upper case equivalent of input a, if a is already upper case or not in the alphabet it returns the input e.g. input ('G') & input ('g') returns 'G', input ('!') returns '!'
+	 */
 	public static char toUpperCase(int a) {
 		char output;
 		if (isUpperCase(a) || !(isLowerCase(a))) {

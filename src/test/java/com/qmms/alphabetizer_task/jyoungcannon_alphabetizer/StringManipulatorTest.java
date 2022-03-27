@@ -18,6 +18,11 @@ public class StringManipulatorTest {
     }
 	
 	@Test
+	public void anglosizeString() {
+		assertEquals("aeioussaecmthdny-YNDThCAEAEIOU", StringManipulator.anglosizeString("áéïôúßæçµþðñÿ'-ÝÑÐÞÇÆÂËÎÔÛ"));
+	}
+	
+	@Test
 	public void StringManipulatorInstanceTest() {
 		StringManipulator SMTest = new StringManipulator();
 		assertEquals(SMTest.getClass(), StringManipulator.class);

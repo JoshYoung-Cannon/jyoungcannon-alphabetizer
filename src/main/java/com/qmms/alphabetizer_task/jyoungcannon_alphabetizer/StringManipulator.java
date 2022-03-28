@@ -1,13 +1,78 @@
 package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
 
 public class StringManipulator {
+	
+	/**
+	 * upperCaseMin is the ascii value of A
+	 * upperCaseMax is the ascii value of Z
+	 * lowerCaseMin is the ascii value of a
+	 * lowerCaseMax is the ascii value of z
+	 * caseChange is the value needed to convert from one ascii value to another
+	 */
+	private static int upperCaseMin = 65;
+	private static int upperCaseMax = 90;
+	private static int lowerCaseMin = 97;
+	private static int lowerCaseMax = 122;
+	private static int caseChange = 32;
+	
+	/**
+	 * @param a The char to test to see if it is a lower case character
+	 * @return Returns true if input is a lower case alphabet character e.g. input ('g') returns true, input ('G') and ('!') returns false
+	 */
+	public static boolean isLowerCase(int a) {
+		if (lowerCaseMin <= a && a <= lowerCaseMax) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * @param a The char to test to see if it is a upper case character
+	 * @return Returns true if input is a upper case alphabet character e.g. input ('G') returns true, input ('g') and ('!') returns false
+	 */
+	public static boolean isUpperCase(int a) {
+		if (upperCaseMin <= a && a <= upperCaseMax) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * @param a The char to convert to lower case
+	 * @return Returns the lower case equivalent of input a, if a is already lower case or not in the alphabet it returns the input e.g. input ('G') & input ('g') returns 'g', input ('!') returns '!'
+	 */
+	public static char toLowerCase(int a) {
+		char output;
+		if (isLowerCase(a) || !(isUpperCase(a))) {
+			output = (char) a;
+		}
+		else {
+			output = (char) (a + caseChange);
+		}
+		return output;
+	}
+	
+	/**
+	 * @param a The char to convert to upper case
+	 * @return Returns the upper case equivalent of input a, if a is already upper case or not in the alphabet it returns the input e.g. input ('G') & input ('g') returns 'G', input ('!') returns '!'
+	 */
+	public static char toUpperCase(int a) {
+		char output;
+		if (isUpperCase(a) || !(isLowerCase(a))) {
+			output = (char) a;
+		}
+		else {
+			output = (char) (a - caseChange);
+		}
+		return output;
+	}
 
 	/**
 	 * @param sentence The string to iterate through
 	 * @param splitChar The specific char to be looked for
 	 * @return The number of time splitChar occurs in the given string
 	 */
-	private static int containsCount(String sentence, char splitChar) {
+	public static int containsCount(String sentence, char splitChar) {
 		int splitCharCount = 0;
 		for(int i = 0; i < sentence.length(); i++) {
 			if ((int) sentence.charAt(i) == (int) splitChar) {
@@ -25,6 +90,8 @@ public class StringManipulator {
 	 */
 	private static String copyStringSegment (String sentence, int lowerBound, int upperBound) {
 		String output = "";
+		// TODO implement error handling e.g. upper & lower bounds being valid
+		
 		for (int i = lowerBound; i < upperBound; i++) {
 			output = output + sentence.charAt(i);
 		}
@@ -45,6 +112,7 @@ public class StringManipulator {
 		output = new String[returnCount];
 		
 		if (returnCount == 1) {
+			// Contains no char to split from, return whole string
 			output[0] = sentence;
 		}
 		else {
@@ -235,6 +303,7 @@ public class StringManipulator {
 	 */
 	public static boolean stringEquals(String base, String comparison) {
 		boolean output = false;
+		// TODO implement error handling e.g. one or more inputs are empty
 		if (base.length() == comparison.length()) {
 			output = true;
 			for (int i = 0; i < base.length(); i++) {

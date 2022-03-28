@@ -1,8 +1,25 @@
-# jyoungcannon-alphabetizer v1.1.0
+# jyoungcannon-alphabetizer v1.2.0
 
 # QMMS Interview Task202112: Josh Young-Cannon
 
 This is a word alphabetizer, written with a the goal of using the minimum amount of inbuilt libary code as possible.
+
+### Assumptions
+1. The input text file will seperate different words using a single white space e.g. " "
+
+2. The individual words will only contain language letter characters, apostrophes or hyphens and will not contain numbers, punctuation or sysmbols
+   e.g. Valid input: Fizz, fizz, Fizz-Buzz, Fizz't
+        Invalid input: F!zz, f00, Fizz:Buzz, Fizz\Buzz
+
+3. The alphabetical order (in ragards to tie breakers) is as follows:
+   1. FIZZ
+   2. Fizz
+   3. Fizz-Buzz
+   4. FizzBuzz
+   5. Fizz'Buzz
+   6. fizz
+
+4. Least Viable Product will returns an alphabetical list of all input items (including duplicates)
 
 ## Getting Started
 

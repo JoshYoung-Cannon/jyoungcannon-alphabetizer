@@ -123,6 +123,7 @@ public class StringManipulator {
 						upperBound = j;
 						output[i] = copyStringSegment(sentence, lowerBound, upperBound); // returns lowerBound -> upperBound -1 eliminating splitChar
 						lowerBound = j + 1;
+						break;
 					}
 				}
 			}
@@ -304,6 +305,7 @@ public class StringManipulator {
 	public static boolean stringEquals(String base, String comparison) {
 		boolean output = false;
 		// TODO implement error handling e.g. one or more inputs are empty
+		
 		if (base.length() == comparison.length()) {
 			output = true;
 			for (int i = 0; i < base.length(); i++) {

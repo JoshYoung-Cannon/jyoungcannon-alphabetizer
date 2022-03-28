@@ -10,10 +10,17 @@ public class StringManipulatorTest {
 
 	@Test
     public void splitStringTest() {
-		String[] goal = {"Fizz","Buzz"};
-		String[] res = StringManipulator.splitString("Fizz-Buzz", '-');
+		String[] goal = {"Fizz","Buzz", "Fizz"};
+		String[] res = StringManipulator.splitString("Fizz-Buzz-Fizz", '-');
         assertEquals(goal[0], res[0]);
         assertEquals(goal[1], res[1]);
+        assertEquals(goal[2], res[2]);
+        
+        goal = new String[] {"Fizz","Buzz"};
+        res = StringManipulator.splitString("Fizz-Buzz", '-');
+        assertEquals(goal[0], res[0]);
+        assertEquals(goal[1], res[1]);
+        
         
         goal = new String[] {"Fizz"};
         res = StringManipulator.splitString("Fizz", '-');

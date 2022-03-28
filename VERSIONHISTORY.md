@@ -33,3 +33,6 @@ StringManipulator.toUpperCase(a)
 
 Class methods updated:
 StringManipulator.containsCount(sentence, splitChar) is now public.
+
+### v1.3.0
+Full test coverage for SortOptions Class completed

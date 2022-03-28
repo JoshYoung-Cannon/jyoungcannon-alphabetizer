@@ -9,11 +9,24 @@ import org.junit.jupiter.api.Test;
 public class StringManipulatorTest {
 
 	@Test
+	public void StringManipulatorInstanceTest() {
+		StringManipulator SMTest = new StringManipulator();
+		assertEquals(SMTest.getClass(), StringManipulator.class);
+	}
+	
+	@Test
     public void splitStringTest() {
-		String[] goal = {"Fizz","Buzz"};
-		String[] res = StringManipulator.splitString("Fizz-Buzz", '-');
+		String[] goal = {"Fizz","Buzz", "Fizz"};
+		String[] res = StringManipulator.splitString("Fizz-Buzz-Fizz", '-');
         assertEquals(goal[0], res[0]);
         assertEquals(goal[1], res[1]);
+        assertEquals(goal[2], res[2]);
+        
+        goal = new String[] {"Fizz","Buzz"};
+        res = StringManipulator.splitString("Fizz-Buzz", '-');
+        assertEquals(goal[0], res[0]);
+        assertEquals(goal[1], res[1]);
+        
         
         goal = new String[] {"Fizz"};
         res = StringManipulator.splitString("Fizz", '-');
@@ -24,12 +37,6 @@ public class StringManipulatorTest {
 	public void anglosizeString() {
 		assertEquals("aeioussaecmthdny-YNDThCAEAEIOU", StringManipulator.anglosizeString("áéïôúßæçµþðñÿ'-ÝÑÐÞÇÆÂËÎÔÛ"));
 		assertEquals("abc ABC", StringManipulator.anglosizeString("abc ABC"));
-	}
-	
-	@Test
-	public void StringManipulatorInstanceTest() {
-		StringManipulator SMTest = new StringManipulator();
-		assertEquals(SMTest.getClass(), StringManipulator.class);
 	}
 	
 	@Test

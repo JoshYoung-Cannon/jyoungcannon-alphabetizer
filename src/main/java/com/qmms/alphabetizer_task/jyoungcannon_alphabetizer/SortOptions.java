@@ -68,8 +68,8 @@ public class SortOptions {
 		}
 		
 		for (int i = 0; i < n; i++) {
-			if (!StringManipulator.stringEquals(hyphenA[n], hyphenB[n])) {
-				swap = stringCompareAlphabetically(hyphenA[n], hyphenB[n]);
+			if (!StringManipulator.stringEquals(hyphenA[i], hyphenB[i])) {
+				swap = stringCompareAlphabetically(hyphenA[i], hyphenB[i]);
 				identical = false;
 				break;
 			}

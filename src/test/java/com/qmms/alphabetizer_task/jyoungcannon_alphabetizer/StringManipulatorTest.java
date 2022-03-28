@@ -9,6 +9,12 @@ import org.junit.jupiter.api.Test;
 public class StringManipulatorTest {
 
 	@Test
+	public void StringManipulatorInstanceTest() {
+		StringManipulator SMTest = new StringManipulator();
+		assertEquals(SMTest.getClass(), StringManipulator.class);
+	}
+	
+	@Test
     public void splitStringTest() {
 		String[] goal = {"Fizz","Buzz", "Fizz"};
 		String[] res = StringManipulator.splitString("Fizz-Buzz-Fizz", '-');
@@ -31,12 +37,6 @@ public class StringManipulatorTest {
 	public void anglosizeString() {
 		assertEquals("aeioussaecmthdny-YNDThCAEAEIOU", StringManipulator.anglosizeString("áéïôúßæçµþðñÿ'-ÝÑÐÞÇÆÂËÎÔÛ"));
 		assertEquals("abc ABC", StringManipulator.anglosizeString("abc ABC"));
-	}
-	
-	@Test
-	public void StringManipulatorInstanceTest() {
-		StringManipulator SMTest = new StringManipulator();
-		assertEquals(SMTest.getClass(), StringManipulator.class);
 	}
 	
 	@Test

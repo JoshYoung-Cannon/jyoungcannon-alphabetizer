@@ -25,5 +25,10 @@ public class SortOptionsTest {
 		String[] input = new String[]{"Fizz", "Buzz", "FizzBuzz"};
 		String[] result = SortOptions.bubbleSortAlphabetically(input);
 		assertEquals(arrayToString(goal), arrayToString(result));
+		
+		goal = new String[] {"FIZZ", "Fizz", "Fizz-Buzz", "FizzBuzz", "Fizz'Buzz", "fizz"};
+		input = new String[]{"Fizz'Buzz", "fizz", "Fizz", "Fizz-Buzz", "FIZZ", "FizzBuzz"};
+		result = SortOptions.bubbleSortAlphabetically(input);
+		assertEquals(arrayToString(goal), arrayToString(result));
 	}
 }

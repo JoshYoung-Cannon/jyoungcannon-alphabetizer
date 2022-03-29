@@ -36,3 +36,16 @@ StringManipulator.containsCount(sentence, splitChar) is now public.
 
 ### v1.3.0
 Full test coverage for SortOptions Class completed
+
+### v1.4.0
+Feature-Branch: FileIO Class created;
+Class contains new fields:
+FileIO.encoder
+
+Class contains methods:
+FileIO()
+FileIO(encoder)
+FileIO.setEncoder(encoder)
+FileIO.getEncoder()
+FileIO.loadData(fileLocation)
+FileIO.writeData(fileLocation, data, appendToFile)

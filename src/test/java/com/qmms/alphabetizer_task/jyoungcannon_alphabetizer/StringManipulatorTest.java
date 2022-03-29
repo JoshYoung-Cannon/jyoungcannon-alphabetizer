@@ -44,6 +44,7 @@ public class StringManipulatorTest {
 		assertTrue(StringManipulator.stringEquals("Fizz","Fizz"));
 		assertFalse(StringManipulator.stringEquals("Fizz","Buzz"));
 		assertFalse(StringManipulator.stringEquals("Fizz","Fizzz"));
+		assertFalse(StringManipulator.stringEquals("Fizz",""));
 	}
 	
 	@Test

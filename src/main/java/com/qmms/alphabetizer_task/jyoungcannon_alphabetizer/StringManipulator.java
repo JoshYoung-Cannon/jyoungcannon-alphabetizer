@@ -90,8 +90,7 @@ public class StringManipulator {
 	 */
 	private static String copyStringSegment (String sentence, int lowerBound, int upperBound) {
 		String output = "";
-		// TODO implement error handling e.g. upper & lower bounds being valid
-		
+
 		for (int i = lowerBound; i < upperBound; i++) {
 			output = output + sentence.charAt(i);
 		}

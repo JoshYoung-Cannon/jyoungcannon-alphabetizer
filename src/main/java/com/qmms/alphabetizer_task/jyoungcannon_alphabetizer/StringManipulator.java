@@ -304,7 +304,6 @@ public class StringManipulator {
 	 */
 	public static boolean stringEquals(String base, String comparison) {
 		boolean output = false;
-		// TODO implement error handling e.g. one or more inputs are empty
 		
 		if (base.length() == comparison.length()) {
 			output = true;

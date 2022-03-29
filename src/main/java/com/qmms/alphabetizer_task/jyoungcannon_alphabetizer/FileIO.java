@@ -75,8 +75,14 @@ public class FileIO {
             reader.close();
 		}
 		catch (IOException e) {
-        	e.printStackTrace();
+			System.out.println("An IOException error has occured: " + fileLocation + " (The system cannot find the path specified)");
+			System.out.println("Please ensure that the file and all folders in the file path exist");
+        	//e.printStackTrace();
     	}
+		catch (Exception e) {
+			System.out.println("Unidentified error has occured");
+			rawData.clear();
+		}
 		
 		return rawData;
 	}
@@ -91,7 +97,6 @@ public class FileIO {
 	 */
 	public boolean writeData(String fileLocation, String[] data, boolean appendToFile) {
 		int linePointer = 1;
-		boolean success = false;
 		try {
 			FileOutputStream outputStream = new FileOutputStream(fileLocation, appendToFile);
 			OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, encoder);
@@ -113,12 +118,17 @@ public class FileIO {
 				}
 			}
 			bufferedWriter.close();
-			success = true;
 		}
 		catch (IOException e) {
-            e.printStackTrace();
-            return success;
+			System.out.println("An IOException error has occured: " + fileLocation + " (The system cannot find the path specified)");
+			System.out.println("Please ensure that all folders in the file path exist");
+            //e.printStackTrace();
+            return false;
         }
-		return success;
+		catch (Exception e) {
+			System.out.println("Unidentified error has occured");
+			return false;
+		}
+		return true;
 	}
 }

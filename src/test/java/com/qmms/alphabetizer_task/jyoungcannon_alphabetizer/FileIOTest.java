@@ -1,6 +1,7 @@
 package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -52,7 +53,7 @@ public class FileIOTest {
 		
 		// Wrong file location
 		result = FIOTest.loadData("does_not_exist.txt");
-		//assertEquals(0, result.size());
+		assertEquals(0, result.size());
 	}
 	
 	@Test
@@ -66,5 +67,7 @@ public class FileIOTest {
 		// Append to a file
 		FIOTest.writeData("text_files/output/append_to_file.txt", paragraph1, false);
 		assertTrue(FIOTest.writeData("text_files/output/append_to_file.txt", paragraph2, true));
+		
+		assertFalse(FIOTest.writeData("folder_does_not_exist/file_does_not_exist.txt", paragraph1, false));
 	}
 }

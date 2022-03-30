@@ -1,4 +1,4 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer.file_input_output;
 
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -82,6 +82,49 @@ public class FileIO {
 		catch (Exception e) {
 			System.out.println("Unidentified error has occured");
 			rawData.clear();
+		}
+		
+		return rawData;
+	}
+	
+	/**
+	 * Refactored code from www.codejava.net
+	 * @author Original: www.codejava.net
+	 * @param fileLocation Directory location of desired file
+	 * @return ArrayList of all the lines within the file
+	 * @throws IOException 
+	 */
+	public ArrayList<String> loadDataThrowable(String fileLocation) throws IOException {
+		ArrayList<String> rawData = new ArrayList<String>();
+		try {
+			FileInputStream inputStream = new FileInputStream(fileLocation);
+			InputStreamReader reader = new InputStreamReader(inputStream, encoder);
+			
+			int character;
+			String line = "";
+            while ((character = reader.read()) != -1) {
+            	if ((char) character != '\n' && (char) character != '\r') {
+            		line = line + (char) character;
+            	}
+            	else {
+            		if (line.length() > 0) {
+            			rawData.add(line);
+            			line = "";
+            		}
+            	}
+            }
+            
+            if (line.length() > 0) {
+            	rawData.add(line);
+            }
+            
+            reader.close();
+		}
+		catch (IOException e) {
+			throw e;
+    	}
+		catch (Exception e) {
+			throw e;
 		}
 		
 		return rawData;

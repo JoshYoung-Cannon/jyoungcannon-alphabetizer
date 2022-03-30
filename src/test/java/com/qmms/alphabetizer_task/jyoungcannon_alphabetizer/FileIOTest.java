@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
+
+import com.qmms.alphabetizer_task.jyoungcannon_alphabetizer.file_input_output.FileIO;
+
 import java.util.ArrayList;
 
 public class FileIOTest {

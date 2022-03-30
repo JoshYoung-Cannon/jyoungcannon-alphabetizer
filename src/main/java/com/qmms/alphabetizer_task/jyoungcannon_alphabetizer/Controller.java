@@ -10,7 +10,7 @@ public class Controller {
 	
 	private String inputFileLocation;
 	
-	private boolean askFileLocation() {
+	private boolean askReadFileLocation() {
 		String userInput = UserInput.fileInput();
 		String userQuit = StringManipulator.wordToUpperCase(userInput);
 		if (StringManipulator.stringEquals(userQuit, "QUIT")) {
@@ -62,7 +62,7 @@ public class Controller {
 			while (!validFileLocation) {
 				iOError = false;
 				// 1 - Ask for file location - provide option to quit
-				running = askFileLocation();
+				running = askReadFileLocation();
 				if (!running) {
 					break;
 				}
@@ -128,6 +128,7 @@ public class Controller {
 			printArray(wordsToSort, "\n");
 			
 			// 8 - Save results - if data file invalid ask user to provide alternative or quit
+			while
 			
 			// 9 - End script
 		}

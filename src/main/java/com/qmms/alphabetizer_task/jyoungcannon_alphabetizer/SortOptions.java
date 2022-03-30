@@ -93,9 +93,7 @@ public class SortOptions {
 		// Convert to anglosized versions
 		String angloA = StringManipulator.anglosizeString(a);
 		String angloB = StringManipulator.anglosizeString(b);
-		
-		System.out.println("\n compare: " + angloA + " - " + angloB);
-		
+				
 		// Handle '-' words
 		if (StringManipulator.containsCount(angloA, '-') > 0 || StringManipulator.containsCount(angloB, '-') > 0) {
 			swap = hyphenCompareAlphabetically(angloA, angloB);
@@ -111,15 +109,12 @@ public class SortOptions {
 			boolean breakout = false;
 			for (int i = 0; i < n; i++) {
 				if (angloA.charAt(i) != angloB.charAt(i)) {
-					System.out.print("compare: " + angloA.charAt(i) + " - " + angloB.charAt(i));
 					swap = charCompareAlphabetically(a.charAt(i), b.charAt(i));
-					System.out.print(" swap = " + swap);
 					decisionChar = i;
 					breakout = true;
 					break;
 				}
 			}
-			System.out.print(" decisionChar = " + decisionChar);
 			// Shorter words are 1st alphabetically
 			if (swap == false && a.length() > b.length() && breakout == false) {
 				swap = true;
@@ -139,9 +134,7 @@ public class SortOptions {
 		for (int i = 0; i < toSort.length - 1; i++) {
 			swapNeeded = false;
 			for (int j = 0; j < toSort.length - 1 ; j++) {
-				System.out.print("Loop: " + i + " compare: " + toSort[j] + " - " + toSort[j + 1]);
 				swap = stringCompareAlphabetically(toSort[j], toSort[j + 1]);
-				System.out.println(" swap = " + swap);
 				if (swap) {
 					swapNeeded = true;
 					temp = toSort[j+1];
@@ -149,12 +142,7 @@ public class SortOptions {
 					toSort[j] = temp;
 				}
 			}
-			System.out.print("Loop: " + i + " ");
-			for (int j = 0; j < toSort.length; j++) {
-				System.out.print(toSort[j] + " ");
-			}
-			System.out.println();
-			
+						
 			// If swaps are no longer needed break to reduce wasted comparisons
 			if (!swapNeeded) {
 				break;

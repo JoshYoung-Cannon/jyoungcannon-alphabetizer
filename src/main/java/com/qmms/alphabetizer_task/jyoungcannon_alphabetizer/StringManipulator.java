@@ -66,6 +66,14 @@ public class StringManipulator {
 		}
 		return output;
 	}
+	
+	public static String wordToUpperCase(String word) {
+		String output = "";
+		for (int i = 0; i < word.length(); i++) {
+			output = output + toUpperCase(word.charAt(i));
+		}
+		return output;
+	}
 
 	/**
 	 * @param sentence The string to iterate through

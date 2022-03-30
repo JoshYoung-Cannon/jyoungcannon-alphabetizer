@@ -1,9 +1,13 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
-
-import com.qmms.alphabetizer_task.jyoungcannon_alphabetizer.file_input_output.FileIO;
+package com.qmms.alphabetizer_task.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import com.qmms.alphabetizer_task.input_output.FileIO;
+import com.qmms.alphabetizer_task.input_output.UserInput;
+import com.qmms.alphabetizer_task.sort_options.SortOptions;
+import com.qmms.alphabetizer_task.string_interaction.StringManipulator;
+import com.qmms.alphabetizer_task.string_interaction.Validator;
 
 
 public class Controller {
@@ -14,6 +18,10 @@ public class Controller {
 	private boolean read = true;
 	private boolean write = false;
 	
+	/**
+	 * @param reading When true, this function asks for an input file location, when false, this function asks for a output file directory
+	 * @return returns false when user decides to QUIT, otherwise returns true
+	 */
 	private boolean askFileLocation(boolean reading) {
 		String userInput;
 		if (reading) {
@@ -37,6 +45,10 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * @param arrayList Arraylist to convert into an array
+	 * @return An array containing all the items in the arraylist
+	 */
 	private String[] arrayListToArray(ArrayList<String> arrayList) {
 		String[] output = null;
 		if (arrayList.size() > 0) {
@@ -48,6 +60,10 @@ public class Controller {
 		return output;
 	}
 	
+	/**
+	 * @param toPrint Array of values to print
+	 * @param seperator The string used to space out the items e.g. , or -
+	 */
 	private void printArray(String[] toPrint, String seperator) {
 		for (int i = 0; i < toPrint.length; i++) {
 			System.out.print(toPrint[i]);
@@ -60,6 +76,9 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * @return Arraylist of all the lines within a text file
+	 */
 	private ArrayList<String> getInputFileLocation() {
 		ArrayList<String> fileData = new ArrayList<String>();
 		boolean validFileLocation = false, iOError = false;
@@ -95,6 +114,10 @@ public class Controller {
 		return fileData;
 	}
 	
+	/**
+	 * @param words Array containing duplicate items
+	 * @return An array of unique items
+	 */
 	private String[] getUniqueItems(String[] words) {
 		ArrayList<String> uniqueWords = new ArrayList<String>();
 		for (int i = 0; i < words.length; i++) {
@@ -105,6 +128,10 @@ public class Controller {
 		return arrayListToArray(uniqueWords);
 	}
 	
+	/**
+	 * @param sortedWords Array of words in alphabetical order
+	 * @param invalidWords Array of invalid words
+	 */
 	private void getOutputFileLocation(String[] sortedWords, String[] invalidWords) {
 		boolean validFileLocation = false;
 		char backslash = '\\';
@@ -153,6 +180,9 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * Asks the user if they would like to exit the program
+	 */
 	private void quitProgram() {
 		String userInput = "";
 		boolean validInput = false;
@@ -183,6 +213,9 @@ public class Controller {
 		}
 	}
 	
+	/**
+	 * @return always returns true
+	 */
 	public boolean run() {
 		char space = ' ';
 		String rawString, formattedString;
@@ -191,6 +224,7 @@ public class Controller {
 		ArrayList<String> validWords = new ArrayList<String>();
 		ArrayList<String> invalidWords = new ArrayList<String>();
 		
+		// Start
 		running = true;
 		System.out.println("Welcome to the Text File Alphabetizer by Josh Young-Cannon!");
 		System.out.println("You can exit this application by typing QUIT at any time you are asked to type an input.");
@@ -198,7 +232,8 @@ public class Controller {
 			rawData.clear();
 			rawData = getInputFileLocation();
 			if (rawData.size() > 0) {
-				// 3 - Ensure only 1 space between each word
+				
+				// Convert multiple lines into a single line string
 				rawString = rawData.get(0);
 				if (rawData.size() > 1) {
 					for (int i = 1; i < rawData.size(); i++) {
@@ -206,13 +241,14 @@ public class Controller {
 					}
 				}
 				
+				// Ensure only 1 space between each word
 				formattedString = StringManipulator.removeDuplicateChars(rawString, space);
 				System.out.println("Input from file: " + formattedString);
 				
-				// 4 - Separate into words by space
+				// Separate input string into words by spaces
 				String[] allWords = StringManipulator.splitString(formattedString, space);
 				
-				// 5 - Sort words into valid and invalid lists
+				// Sort words into valid and invalid lists
 				validWords.clear();
 				invalidWords.clear();
 				for (int i = 0; i < allWords.length; i++) {
@@ -224,7 +260,7 @@ public class Controller {
 					}
 				}
 				
-				// 6 - Alphabetize valid words
+				// Alphabetize valid words
 				String[] wordsToSort = arrayListToArray(validWords);
 				String[] result = null;
 				if (validWords.size() > 0) {
@@ -232,7 +268,7 @@ public class Controller {
 				}
 				String[] unsortedWords = arrayListToArray(invalidWords);
 				
-				// 7 - Display results
+				// Display results
 				System.out.println("Result:");
 				System.out.print("Sorted Words:");
 				if (validWords.size() > 0) {
@@ -251,10 +287,10 @@ public class Controller {
 				else {
 					System.out.println(" There are no invalid words from this input");
 				}
-				// 8 - Save results - if data file invalid ask user to provide alternative or quit
+				
+				// Save/don't save results
 				getOutputFileLocation(result, unsortedWords);
 				
-				// 9 - End script
 				quitProgram();
 			}
 		}

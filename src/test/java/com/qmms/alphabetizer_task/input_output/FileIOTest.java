@@ -1,12 +1,10 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.input_output;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
-import com.qmms.alphabetizer_task.jyoungcannon_alphabetizer.file_input_output.FileIO;
 
 import java.util.ArrayList;
 

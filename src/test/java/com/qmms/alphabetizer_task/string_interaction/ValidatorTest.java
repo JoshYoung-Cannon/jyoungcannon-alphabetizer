@@ -1,4 +1,4 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.string_interaction;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

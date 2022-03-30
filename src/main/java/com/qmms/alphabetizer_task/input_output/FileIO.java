@@ -1,4 +1,4 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer.file_input_output;
+package com.qmms.alphabetizer_task.input_output;
 
 import java.io.BufferedWriter;
 import java.io.FileInputStream;

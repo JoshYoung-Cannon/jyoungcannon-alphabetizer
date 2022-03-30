@@ -1,4 +1,6 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.sort_options;
+
+import com.qmms.alphabetizer_task.string_interaction.StringManipulator;
 
 public class SortOptions {
 	

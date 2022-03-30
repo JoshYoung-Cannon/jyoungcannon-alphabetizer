@@ -1,4 +1,4 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

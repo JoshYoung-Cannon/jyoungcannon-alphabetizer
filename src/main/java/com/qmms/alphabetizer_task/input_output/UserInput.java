@@ -1,4 +1,4 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.input_output;
 
 import java.util.Scanner;
 

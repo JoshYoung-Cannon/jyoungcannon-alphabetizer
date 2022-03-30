@@ -106,7 +106,7 @@ public class Controller {
 	}
 	
 	private void getOutputFileLocation(String[] sortedWords, String[] invalidWords) {
-		boolean validFileLocation = false, iOError = false;
+		boolean validFileLocation = false;
 		char backslash = '\\';
 		String inputfileNameBase, inputFileName, outputFilePath;
 		String[] inputfileNameComponents, uniqueWords;
@@ -184,7 +184,6 @@ public class Controller {
 	}
 	
 	public boolean run() {
-		boolean validFileLocation, iOError;
 		char space = ' ';
 		String rawString, formattedString;
 		Validator valid = new Validator();

@@ -89,6 +89,7 @@ public class FileIO {
 	
 	/**
 	 * Refactored code from www.codejava.net
+	 * Throws all exceptions to calling body
 	 * @author Original: www.codejava.net
 	 * @param fileLocation Directory location of desired file
 	 * @return ArrayList of all the lines within the file

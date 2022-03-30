@@ -88,7 +88,7 @@ public class SortOptions {
 	 * @return Returns true if items should be swapped alphabetically, false if not e.g. inputs ("Zy","Ab") returns true, inputs ("Ab","Zy") returns false
 	 */
 	private static boolean stringCompareAlphabetically(String a, String b) {
-		int n, decisionChar = 0;
+		int n;
 		boolean swap = false;
 		// Convert to anglosized versions
 		String angloA = StringManipulator.anglosizeString(a);
@@ -106,17 +106,16 @@ public class SortOptions {
 			else {
 				n = angloB.length();
 			}
-			boolean breakout = false;
+			boolean comparedSectionIdentical = true;
 			for (int i = 0; i < n; i++) {
 				if (angloA.charAt(i) != angloB.charAt(i)) {
 					swap = charCompareAlphabetically(a.charAt(i), b.charAt(i));
-					decisionChar = i;
-					breakout = true;
+					comparedSectionIdentical = false;
 					break;
 				}
 			}
 			// Shorter words are 1st alphabetically
-			if (swap == false && a.length() > b.length() && breakout == false) {
+			if (!swap && a.length() > b.length() && comparedSectionIdentical) {
 				swap = true;
 			}
 		}

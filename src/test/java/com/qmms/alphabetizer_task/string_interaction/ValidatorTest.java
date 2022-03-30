@@ -13,7 +13,8 @@ public class ValidatorTest {
 	public void validateWordTest() {
 		assertTrue(VTest.validateWord("Fizz-Buzz"));
 		assertTrue(VTest.validateWord("Fizz'uzz"));
-		assertTrue(VTest.validateWord("'izz'uzzs'"));
+		assertTrue(VTest.validateWord("Fizz'uzzs'"));
+		assertFalse(VTest.validateWord("'izz'uzzs'"));
 		assertFalse(VTest.validateWord("Fizz--Buzz"));
 		assertFalse(VTest.validateWord("-Fizz-Buzz"));
 		assertFalse(VTest.validateWord("Fizz-Buzz-"));
@@ -25,7 +26,8 @@ public class ValidatorTest {
 	public void regexValidateWordTest() {
 		assertTrue(VTest.validateWordRegex("Fizz-Buzz"));
 		assertTrue(VTest.validateWordRegex("Fizz'uzz"));
-		assertTrue(VTest.validateWordRegex("'izz'uzzs'"));
+		assertTrue(VTest.validateWordRegex("Fizz'uzzs'"));
+		assertFalse(VTest.validateWordRegex("'izz'uzzs'"));
 		assertFalse(VTest.validateWordRegex("Fizz--Buzz"));
 		assertFalse(VTest.validateWordRegex("-Fizz-Buzz"));
 		assertFalse(VTest.validateWordRegex("Fizz-Buzz-"));

@@ -20,6 +20,15 @@ public class SortOptionsTest {
 	}
 	
 	@Test
+	public void uniqueCase() {
+		String[] goal = new String[]{"been","has"};
+		String[] input = new String[]{"been","has"};
+		String[] result = SortOptions.bubbleSortAlphabetically(input);
+		assertEquals(arrayToString(goal), arrayToString(result));
+	}
+	
+	
+	@Test
 	public void SortOptionsInstanceTest() {
 		SortOptions SOTest = new SortOptions();
 		assertEquals(SOTest.getClass(), SortOptions.class);
@@ -39,10 +48,6 @@ public class SortOptionsTest {
 		
 		goal = new String[] {"FIZZ", "Fizz", "Fizz-Buzz", "Fizz-Buzz-Fizz", "FizzBuzz", "Fizz'Buzz", "fizz"};
 		input = new String[]{"Fizz-Buzz-Fizz", "Fizz'Buzz", "fizz", "Fizz", "Fizz-Buzz", "FIZZ", "FizzBuzz"};
-		result = SortOptions.bubbleSortAlphabetically(input);
-		assertEquals(arrayToString(goal), arrayToString(result));
-		
-		input = new String[]{"The", "line", "has", "been", "read", "The", "line", "has", "been", "read"};
 		result = SortOptions.bubbleSortAlphabetically(input);
 		assertEquals(arrayToString(goal), arrayToString(result));
 	}
@@ -538,4 +543,5 @@ public class SortOptionsTest {
 		assertEquals(arrayToString(goal), arrayToString(result));
 				
 	}
+	
 }

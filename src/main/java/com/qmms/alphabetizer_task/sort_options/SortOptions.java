@@ -134,7 +134,7 @@ public class SortOptions {
 		boolean swap, swapNeeded;
 		for (int i = 0; i < toSort.length - 1; i++) {
 			swapNeeded = false;
-			for (int j = 0; j < toSort.length - 1 ; j++) {
+			for (int j = 0; j < toSort.length - i - 1 ; j++) {
 				swap = stringCompareAlphabetically(toSort[j], toSort[j + 1]);
 				if (swap) {
 					swapNeeded = true;

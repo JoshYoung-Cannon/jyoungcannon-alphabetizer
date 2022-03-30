@@ -135,7 +135,7 @@ public class StringManipulator {
 	 * @param raw The raw char containing potentially non-English letters
 	 * @return An anglosized version of the input char for alphabetizing e.g. input('ü') returns 'u'
 	 */
-	private static String anglosizeChar(char raw) {
+	public static String anglosizeChar(char raw) {
 		String anglosized;
 		switch (raw) {
 		case ('\''):

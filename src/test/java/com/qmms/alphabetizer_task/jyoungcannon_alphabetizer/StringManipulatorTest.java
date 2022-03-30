@@ -73,4 +73,12 @@ public class StringManipulatorTest {
 		assertEquals('G',StringManipulator.toUpperCase('G'));
 		assertEquals('!',StringManipulator.toUpperCase('!'));
 	}
+	
+	@Test
+	public void removeDuplicateCharsTest() {
+		assertEquals("Fizz-Buzz", StringManipulator.removeDuplicateChars("Fizz--Buzz", '-'));
+		assertEquals("Fiz", StringManipulator.removeDuplicateChars("Fizz", 'z'));
+		assertEquals("Fizz-Buzz-FizzBuzz", StringManipulator.removeDuplicateChars("Fizz--Buzz-FizzBuzz", '-'));
+		assertEquals("<-Fizz->", StringManipulator.removeDuplicateChars("<----Fizz---->", '-'));
+	}
 }

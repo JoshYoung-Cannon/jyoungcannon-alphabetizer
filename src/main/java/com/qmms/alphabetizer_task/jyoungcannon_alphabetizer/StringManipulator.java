@@ -315,4 +315,23 @@ public class StringManipulator {
 		}
 		return output;
 	}
+	
+	/**
+	 * @param sentence The active string containing concatenated duplicates
+	 * @param keyChar The char that should be reduced to 1 in a sequence
+	 * @return String with extra chars removed e.g. input ("Fizz--Buzz", '-') returns "Fizz-Buzz"
+	 */
+	public static String removeDuplicateChars(String sentence, char keyChar) {
+		String output = "";
+		for (int i = 0; i < sentence.length() - 1; i++) {
+			if (sentence.charAt(i) == keyChar && sentence.charAt(i + 1) == keyChar) {
+				output = output + "";
+			}
+			else {
+				output = output + sentence.charAt(i);
+			}
+		}
+		output = output + sentence.charAt(sentence.length() - 1);
+		return output;
+	}
 }

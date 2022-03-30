@@ -132,8 +132,10 @@ public class SortOptions {
 		boolean swap, swapNeeded;
 		for (int i = 0; i < toSort.length - 1; i++) {
 			swapNeeded = false;
-			for (int j = 0; j < toSort.length - i - 1; j++) {
+			for (int j = 0; j < toSort.length - 1 ; j++) {
+				//System.out.print("Loop: " + i + " compare: " + toSort[j] + " - " + toSort[j + 1]);
 				swap = stringCompareAlphabetically(toSort[j], toSort[j + 1]);
+				//System.out.println(" swap = " + swap);
 				if (swap) {
 					swapNeeded = true;
 					temp = toSort[j+1];
@@ -141,6 +143,11 @@ public class SortOptions {
 					toSort[j] = temp;
 				}
 			}
+			System.out.print("Loop: " + i + " ");
+			for (int j = 0; j < toSort.length; j++) {
+				System.out.print(toSort[j] + " ");
+			}
+			System.out.println();
 			
 			// If swaps are no longer needed break to reduce wasted comparisons
 			if (!swapNeeded) {

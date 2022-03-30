@@ -1,4 +1,6 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.sort_options;
+
+import com.qmms.alphabetizer_task.string_interaction.StringManipulator;
 
 public class SortOptions {
 	
@@ -88,12 +90,12 @@ public class SortOptions {
 	 * @return Returns true if items should be swapped alphabetically, false if not e.g. inputs ("Zy","Ab") returns true, inputs ("Ab","Zy") returns false
 	 */
 	private static boolean stringCompareAlphabetically(String a, String b) {
-		int n, decisionChar = 0;
+		int n;
 		boolean swap = false;
 		// Convert to anglosized versions
 		String angloA = StringManipulator.anglosizeString(a);
 		String angloB = StringManipulator.anglosizeString(b);
-		
+				
 		// Handle '-' words
 		if (StringManipulator.containsCount(angloA, '-') > 0 || StringManipulator.containsCount(angloB, '-') > 0) {
 			swap = hyphenCompareAlphabetically(angloA, angloB);
@@ -106,16 +108,16 @@ public class SortOptions {
 			else {
 				n = angloB.length();
 			}
-			
+			boolean comparedSectionIdentical = true;
 			for (int i = 0; i < n; i++) {
 				if (angloA.charAt(i) != angloB.charAt(i)) {
 					swap = charCompareAlphabetically(a.charAt(i), b.charAt(i));
-					decisionChar = i;
+					comparedSectionIdentical = false;
 					break;
 				}
 			}
 			// Shorter words are 1st alphabetically
-			if (swap == false && a.length() > b.length() && !(StringManipulator.isUpperCase(angloA.charAt(decisionChar)) && StringManipulator.isLowerCase(angloB.charAt(decisionChar)))) {
+			if (!swap && a.length() > b.length() && comparedSectionIdentical) {
 				swap = true;
 			}
 		}
@@ -132,7 +134,7 @@ public class SortOptions {
 		boolean swap, swapNeeded;
 		for (int i = 0; i < toSort.length - 1; i++) {
 			swapNeeded = false;
-			for (int j = 0; j < toSort.length - i - 1; j++) {
+			for (int j = 0; j < toSort.length - 1 ; j++) {
 				swap = stringCompareAlphabetically(toSort[j], toSort[j + 1]);
 				if (swap) {
 					swapNeeded = true;
@@ -141,7 +143,7 @@ public class SortOptions {
 					toSort[j] = temp;
 				}
 			}
-			
+						
 			// If swaps are no longer needed break to reduce wasted comparisons
 			if (!swapNeeded) {
 				break;

@@ -1,4 +1,4 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.string_interaction;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -44,6 +44,7 @@ public class StringManipulatorTest {
 		assertTrue(StringManipulator.stringEquals("Fizz","Fizz"));
 		assertFalse(StringManipulator.stringEquals("Fizz","Buzz"));
 		assertFalse(StringManipulator.stringEquals("Fizz","Fizzz"));
+		assertFalse(StringManipulator.stringEquals("Fizz",""));
 	}
 	
 	@Test
@@ -71,5 +72,13 @@ public class StringManipulatorTest {
 		assertEquals('G',StringManipulator.toUpperCase('g'));
 		assertEquals('G',StringManipulator.toUpperCase('G'));
 		assertEquals('!',StringManipulator.toUpperCase('!'));
+	}
+	
+	@Test
+	public void removeDuplicateCharsTest() {
+		assertEquals("Fizz-Buzz", StringManipulator.removeDuplicateChars("Fizz--Buzz", '-'));
+		assertEquals("Fiz", StringManipulator.removeDuplicateChars("Fizz", 'z'));
+		assertEquals("Fizz-Buzz-FizzBuzz", StringManipulator.removeDuplicateChars("Fizz--Buzz-FizzBuzz", '-'));
+		assertEquals("<-Fizz->", StringManipulator.removeDuplicateChars("<----Fizz---->", '-'));
 	}
 }

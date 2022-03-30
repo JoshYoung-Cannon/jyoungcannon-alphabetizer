@@ -1,4 +1,4 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.string_interaction;
 
 public class StringManipulator {
 	
@@ -66,6 +66,14 @@ public class StringManipulator {
 		}
 		return output;
 	}
+	
+	public static String wordToUpperCase(String word) {
+		String output = "";
+		for (int i = 0; i < word.length(); i++) {
+			output = output + toUpperCase(word.charAt(i));
+		}
+		return output;
+	}
 
 	/**
 	 * @param sentence The string to iterate through
@@ -90,8 +98,7 @@ public class StringManipulator {
 	 */
 	private static String copyStringSegment (String sentence, int lowerBound, int upperBound) {
 		String output = "";
-		// TODO implement error handling e.g. upper & lower bounds being valid
-		
+
 		for (int i = lowerBound; i < upperBound; i++) {
 			output = output + sentence.charAt(i);
 		}
@@ -136,7 +143,7 @@ public class StringManipulator {
 	 * @param raw The raw char containing potentially non-English letters
 	 * @return An anglosized version of the input char for alphabetizing e.g. input('ü') returns 'u'
 	 */
-	private static String anglosizeChar(char raw) {
+	public static String anglosizeChar(char raw) {
 		String anglosized;
 		switch (raw) {
 		case ('\''):
@@ -304,7 +311,6 @@ public class StringManipulator {
 	 */
 	public static boolean stringEquals(String base, String comparison) {
 		boolean output = false;
-		// TODO implement error handling e.g. one or more inputs are empty
 		
 		if (base.length() == comparison.length()) {
 			output = true;
@@ -315,6 +321,25 @@ public class StringManipulator {
 				}
 			}
 		}
+		return output;
+	}
+	
+	/**
+	 * @param sentence The active string containing concatenated duplicates
+	 * @param keyChar The char that should be reduced to 1 in a sequence
+	 * @return String with extra chars removed e.g. input ("Fizz--Buzz", '-') returns "Fizz-Buzz"
+	 */
+	public static String removeDuplicateChars(String sentence, char keyChar) {
+		String output = "";
+		for (int i = 0; i < sentence.length() - 1; i++) {
+			if (sentence.charAt(i) == keyChar && sentence.charAt(i + 1) == keyChar) {
+				output = output + "";
+			}
+			else {
+				output = output + sentence.charAt(i);
+			}
+		}
+		output = output + sentence.charAt(sentence.length() - 1);
 		return output;
 	}
 }

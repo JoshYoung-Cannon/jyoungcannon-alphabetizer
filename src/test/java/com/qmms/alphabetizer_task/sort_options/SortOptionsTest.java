@@ -1,4 +1,4 @@
-package com.qmms.alphabetizer_task.jyoungcannon_alphabetizer;
+package com.qmms.alphabetizer_task.sort_options;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,6 +18,15 @@ public class SortOptionsTest {
 		}
 		return res;
 	}
+	
+	@Test
+	public void uniqueCase() {
+		String[] goal = new String[]{"been","has"};
+		String[] input = new String[]{"been","has"};
+		String[] result = SortOptions.bubbleSortAlphabetically(input);
+		assertEquals(arrayToString(goal), arrayToString(result));
+	}
+	
 	
 	@Test
 	public void SortOptionsInstanceTest() {
@@ -534,4 +543,5 @@ public class SortOptionsTest {
 		assertEquals(arrayToString(goal), arrayToString(result));
 				
 	}
+	
 }

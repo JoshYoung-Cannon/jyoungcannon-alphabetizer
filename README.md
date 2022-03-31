@@ -28,20 +28,21 @@ This is a word alphabetizer, written with a the goal of using the minimum amount
 Java 17 JDK:
 A copy of Java 17 can be found here: https://www.oracle.com/java/technologies/downloads/#jdk17-windows
 
-Add the the location of the installed JDK to your System Environment Variables and name it JAVA_HOME Add %JAVA_HOME%\bin to your System Path.
-You can test if java has been installed by typing java -version into a command prompt.
+1. Add the the location of the installed JDK to your System Environment Variables and name it JAVA_HOME Add %JAVA_HOME%\bin to your System Path.
+2. You can test if java has been installed by typing java -version into a command prompt.
 
 apache-maven-3.8.5:
 A copy of apache-maven-3.8.5-bin.zip can be found here: https://maven.apache.org/download.cgi
 
-Extract the contents of apache-maven-3.8.5-bin.zip to any directory (ideally Program Files).
-Add the location of the apache-maven folder to your System Environment Variables and name it M2_HOME Add %M2_HOME%\bin to your System Path.
-You can test if maven has been installed by typing mvn -version into a command prompt.
+1. Extract the contents of apache-maven-3.8.5-bin.zip to any directory (ideally Program Files).
+2. Add the location of the apache-maven folder to your System Environment Variables and name it M2_HOME Add %M2_HOME%\bin to your System Path.
+3. You can test if maven has been installed by typing mvn -version into a command prompt.
 
-Eclipse Java (to edit code files)
-Install Eclipse on your computer making sure to install maven at the same time.
+Optional: Java Editor (to edit code files)
 
-### Installing
+1. Install your prefered Java editor on your computer making sure that it is set to be able to open maven projects.
+
+### Building
 
 A step by step guide to building the project:
 
@@ -63,19 +64,26 @@ Running the project:
 
 Using the project:
 1. The programme will ask for a file path to your input text file.
-2. If it is a valid file path the programme will continue, otherwise it will ask you for a new file path (typing QUIT here will close the programme)
+2. If it is a valid file path the programme will continue.
+   Otherwise it will ask you for a new file path (typing QUIT here will close the programme).
 3. The code will then display all the words from the input file, seperate them into valid and invalid word lists and sort the valid words.
 4. The code will then display the sorted words followed by the invalid words.
 5. The code will then ask for a directory to save the output.
-6. If it is a valid file path the programme will save the text files SortedWordsOfYourInputFileName.txt, UniqueSortedWordsOfYourInputFileName.txt and InvalidWordsOfYourInputFileName.txt. Otherwise it will ask you for a new file path (typing QUIT here will allow you to continue without saving the files).
-7. SortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words including duplicates.
-8. UniqueSortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words excluding duplicates.
-9. InvalidWordsOfYourInputFileName.txt: Contains a list off all invalid words for the purpose of future tool improvements.
-10. The code will then ask if you would like to exit the programme, typing Y or QUIT here will exit the programme, typing N will cause the programme to ask you for another input file.
+6. If it is a valid file path the programme will save the text files SortedWordsOfYourInputFileName.txt, UniqueSortedWordsOfYourInputFileName.txt and InvalidWordsOfYourInputFileName.txt. 
+   Otherwise it will ask you for a new file path (typing QUIT here will allow you to continue without saving the files).
+7. The code will then ask if you would like to exit the programme, typing Y or QUIT here will exit the programme, typing N will cause the programme to ask you for another input file, and repeat all previous steps.
+
+Program outputs:
+- SortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words including duplicates.
+- UniqueSortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words excluding duplicates.
+- InvalidWordsOfYourInputFileName.txt: Contains a list off all invalid words for the purpose of future tool improvements.
 
 NOTE: 
-1. An example text file has been included in the jyoungcannon-alphabetizer\example folder and can be called by typing ..\example\Reaper-Man-Amazon-BookDescription.txt when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder.
-2. If desired the example folder can be used to hold the output files using the file path ..\example when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder.
+1. An example text file has been included in the jyoungcannon-alphabetizer\example folder, when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder the example text can be called using the file path:
+..\example\Reaper-Man-Amazon-BookDescription.txt
+
+2. If desired the example folder can be used to hold the output files, when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder use the file path: 
+..\example
 
 ## Built With
 

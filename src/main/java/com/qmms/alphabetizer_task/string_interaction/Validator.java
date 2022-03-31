@@ -5,7 +5,14 @@ import java.util.regex.Pattern;
 
 public class Validator {
 
+	
 	/**
+	 * String containing all accepted non-letter characters
+	 */
+	private String exceptionChars;
+	
+	/**
+	 * Constructs a new Validator with user defined value for the exceptionChars
 	 * @param exceptionChars String containing all valid non-letter symbols
 	 */
 	public Validator(String exceptionChars) {
@@ -14,24 +21,31 @@ public class Validator {
 	}
 	
 	/**
-	 * Defaults exceptionChars to ' and -
+	 * Constructs a new Validator with default exceptionChars ' and -
 	 */
 	public Validator() {
 		super();
 		this.exceptionChars = "'-";
 	}
 	
-private String exceptionChars;
-	
+	/**
+	 * exceptionChars getter
+	 * @return Returns the exceptionChars
+	 */
 	public String getExceptionChars() {
 		return exceptionChars;
 	}
 
+	/**
+	 * exceptionChars setter
+	 * @param exceptionChars String containing all accepted non-letter characters
+	 */
 	public void setExceptionChars(String exceptionChars) {
 		this.exceptionChars = exceptionChars;
 	}
 
 	/**
+	 * Checks all characters in a String are valid
 	 * @param word String sequence being tested
 	 * @return Returns true when String only contains valid characters
 	 */
@@ -53,6 +67,7 @@ private String exceptionChars;
 	}
 	
 	/**
+	 * Checks a String is in a valid format using regex
 	 * @param word String sequence being tested
 	 * @return Returns true if all exception characters are correctly formatted
 	 */
@@ -63,6 +78,7 @@ private String exceptionChars;
 	}
 	
 	/**
+	 * Checks a String is in a valid format
 	 * @param word String sequence being tested
 	 * @return Returns true if all exception characters are correctly formatted
 	 */
@@ -86,6 +102,7 @@ private String exceptionChars;
 	
 	
 	/**
+	 * Checks a given String is valid
 	 * @param word String sequence being tested
 	 * @return Returns true if word is both correctly formatted and only contains valid characters
 	 */
@@ -99,6 +116,7 @@ private String exceptionChars;
 	}
 	
 	/**
+	 * Checks a given String is valid using regex
 	 * @param word String sequence being tested
 	 * @return Returns true if word is both correctly formatted and only contains valid characters
 	 */

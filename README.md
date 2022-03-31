@@ -46,7 +46,7 @@ Optional: Java Editor (to edit code files)
 
 A step by step guide to building the project:
 
-1. Go to the project file containing the src folder and pom.xml: jyoungcannon-alphabetizer
+1. Go to the project folder jyoungcannon-alphabetizer, which contains the src folder and pom.xml
 2. Open a command prompt in the source folder
 3. Check Java 17 & Apache Maven 3.8.5 has been installed
 4. Run the command: mvn clean
@@ -63,15 +63,17 @@ Running the project:
 3. Run the command: java -jar jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar
 
 Using the project:
-1. The programme will ask for a file path to your input text file.
-2. If it is a valid file path the programme will continue.
-   Otherwise it will ask you for a new file path (typing QUIT here will close the programme).
-3. The code will then display all the words from the input file, seperate them into valid and invalid word lists and sort the valid words.
-4. The code will then display the sorted words followed by the invalid words.
-5. The code will then ask for a directory to save the output.
-6. If it is a valid file path the programme will save the text files SortedWordsOfYourInputFileName.txt, UniqueSortedWordsOfYourInputFileName.txt and InvalidWordsOfYourInputFileName.txt. 
-   Otherwise it will ask you for a new file path (typing QUIT here will allow you to continue without saving the files).
-7. The code will then ask if you would like to exit the programme, typing Y or QUIT here will exit the programme, typing N will cause the programme to ask you for another input file, and repeat all previous steps.
+1. The program will ask for a file path to your input text file
+2. If it is a valid file path the program will continue
+   Otherwise it will ask you for a new file path (typing QUIT here will close the program)
+3. The code will then display all the words from the input file, seperate them into valid and invalid word lists and sort the valid words
+4. The code will then display the sorted words followed by the invalid words
+5. The code will then ask for a directory to save the output
+6. If it is a valid file path the program will save the text files SortedWordsOfYourInputFileName.txt, UniqueSortedWordsOfYourInputFileName.txt and InvalidWordsOfYourInputFileName.txt
+   Otherwise it will ask you for a new file path (typing QUIT here will allow you to continue without saving the files)
+7. The code will then ask if you would like to exit the program
+   Typing Y or QUIT here will exit the program
+   Typing N will cause the program to ask you for another input file, and repeat all previous steps
 
 Program outputs:
 - SortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words including duplicates.

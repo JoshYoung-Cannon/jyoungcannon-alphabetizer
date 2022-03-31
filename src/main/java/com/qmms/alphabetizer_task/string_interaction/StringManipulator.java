@@ -16,6 +16,7 @@ public class StringManipulator {
 	private static int caseChange = 32;
 	
 	/**
+	 * Checks if a character is lower case
 	 * @param a The char to test to see if it is a lower case character
 	 * @return Returns true if input is a lower case alphabet character e.g. input ('g') returns true, input ('G') and ('!') returns false
 	 */
@@ -27,6 +28,7 @@ public class StringManipulator {
 	}
 	
 	/**
+	 * Checks if a character is upper case
 	 * @param a The char to test to see if it is a upper case character
 	 * @return Returns true if input is a upper case alphabet character e.g. input ('G') returns true, input ('g') and ('!') returns false
 	 */
@@ -38,6 +40,7 @@ public class StringManipulator {
 	}
 	
 	/**
+	 * Converts a character to lower case
 	 * @param a The char to convert to lower case
 	 * @return Returns the lower case equivalent of input a, if a is already lower case or not in the alphabet it returns the input e.g. input ('G') & input ('g') returns 'g', input ('!') returns '!'
 	 */
@@ -53,6 +56,7 @@ public class StringManipulator {
 	}
 	
 	/**
+	 * Converts a character to upper case
 	 * @param a The char to convert to upper case
 	 * @return Returns the upper case equivalent of input a, if a is already upper case or not in the alphabet it returns the input e.g. input ('G') & input ('g') returns 'G', input ('!') returns '!'
 	 */
@@ -76,6 +80,7 @@ public class StringManipulator {
 	}
 
 	/**
+	 * Counts the amount of times a specific character occurs in a string
 	 * @param sentence The string to iterate through
 	 * @param splitChar The specific char to be looked for
 	 * @return The number of time splitChar occurs in the given string
@@ -91,6 +96,7 @@ public class StringManipulator {
 	}
 	
 	/**
+	 * Copys a portion of a String based on the upper and lower bounds
 	 * @param sentence The string to copy a subset from
 	 * @param lowerBound The start char
 	 * @param upperBound The end char
@@ -106,6 +112,7 @@ public class StringManipulator {
 	}
 	
 	/**
+	 * Splits a String into an array using a specified character as a break point
 	 * @param sentence The string to split
 	 * @param splitChar The specific char to split on
 	 * @return An array of the split values e.g. inputs ("Fizz-Buzz-FizzBuzz",'-') returns {"Fizz", "Buzz", "FizzBuzz"} 
@@ -140,6 +147,7 @@ public class StringManipulator {
 	}
 	
 	/**
+	 * Converts UTF-8 Latin supplement letters into English alphabetical equivalents
 	 * @param raw The raw char containing potentially non-English letters
 	 * @return An anglosized version of the input char for alphabetizing e.g. input('ü') returns 'u'
 	 */
@@ -292,6 +300,7 @@ public class StringManipulator {
 	}
 	
 	/**
+	 * Converts String containing UTF-8 Latin supplement letters into English word equivalents
 	 * @param raw The raw string containing non-English letters
 	 * @return A string comprised of best fit chars to simplify alphabetizing e.g. input("München") returns "Munchen"
 	 */
@@ -305,6 +314,7 @@ public class StringManipulator {
 	}
 
 	/**
+	 * Compares two strings to see if they are identical
 	 * @param base The active string
 	 * @param comparison The string to compare too
 	 * @return True if both strings are identical, false if not e.g. inputs ("Fizz","Fizz") returns true, inputs ("Fizz","Buzz") returns false
@@ -325,6 +335,7 @@ public class StringManipulator {
 	}
 	
 	/**
+	 * Removes sequences of a designated character from a string
 	 * @param sentence The active string containing concatenated duplicates
 	 * @param keyChar The char that should be reduced to 1 in a sequence
 	 * @return String with extra chars removed e.g. input ("Fizz--Buzz", '-') returns "Fizz-Buzz"

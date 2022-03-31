@@ -19,6 +19,7 @@ public class Controller {
 	private boolean write = false;
 	
 	/**
+	 * Prompts and gets the filepath from the user
 	 * @param reading When true, this function asks for an input file location, when false, this function asks for a output file directory
 	 * @return returns false when user decides to QUIT, otherwise returns true
 	 */
@@ -46,6 +47,7 @@ public class Controller {
 	}
 	
 	/**
+	 * Converts Arraylist into an array
 	 * @param arrayList Arraylist to convert into an array
 	 * @return An array containing all the items in the arraylist
 	 */
@@ -61,6 +63,7 @@ public class Controller {
 	}
 	
 	/**
+	 * Prints all array values
 	 * @param toPrint Array of values to print
 	 * @param seperator The string used to space out the items e.g. , or -
 	 */
@@ -77,6 +80,7 @@ public class Controller {
 	}
 	
 	/**
+	 * Handles accessing the input file
 	 * @return Arraylist of all the lines within a text file
 	 */
 	private ArrayList<String> getInputFileLocation() {
@@ -115,6 +119,7 @@ public class Controller {
 	}
 	
 	/**
+	 * Removes any duplicate values from an array
 	 * @param words Array containing duplicate items
 	 * @return An array of unique items
 	 */
@@ -129,6 +134,7 @@ public class Controller {
 	}
 	
 	/**
+	 * Handles accessing the output file
 	 * @param sortedWords Array of words in alphabetical order
 	 * @param invalidWords Array of invalid words
 	 */
@@ -214,6 +220,7 @@ public class Controller {
 	}
 	
 	/**
+	 * Main logic loop of the programme
 	 * @return always returns true
 	 */
 	public boolean run() {

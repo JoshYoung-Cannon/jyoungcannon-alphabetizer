@@ -68,14 +68,14 @@ Using the project:
 4. The code will then display the sorted words followed by the invalid words.
 5. The code will then ask for a directory to save the output.
 6. If it is a valid file path the programme will save the text files SortedWordsOfYourInputFileName.txt, UniqueSortedWordsOfYourInputFileName.txt and InvalidWordsOfYourInputFileName.txt. Otherwise it will ask you for a new file path (typing QUIT here will allow you to continue without saving the files).
-   -SortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words including duplicates.
-   -UniqueSortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words excluding duplicates.
-   -InvalidWordsOfYourInputFileName.txt: Contains a list off all invalid words for the purpose of future tool improvements.
-7. The code will then ask if you would like to exit the programme, typing Y or QUIT here will exit the programme, typing N will cause the programme to ask you for another input file.
+7. SortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words including duplicates.
+8. UniqueSortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words excluding duplicates.
+9. InvalidWordsOfYourInputFileName.txt: Contains a list off all invalid words for the purpose of future tool improvements.
+10. The code will then ask if you would like to exit the programme, typing Y or QUIT here will exit the programme, typing N will cause the programme to ask you for another input file.
 
 NOTE: 
-An example text file has been included in the jyoungcannon-alphabetizer\example folder and can be called by typing ..\example\Reaper-Man-Amazon-BookDescription.txt when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder.
-If desired the example folder can be used to hold the output files using the file path ..\example when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder.
+1. An example text file has been included in the jyoungcannon-alphabetizer\example folder and can be called by typing ..\example\Reaper-Man-Amazon-BookDescription.txt when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder.
+2. If desired the example folder can be used to hold the output files using the file path ..\example when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder.
 
 ## Built With
 

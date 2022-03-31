@@ -5,6 +5,7 @@ import com.qmms.alphabetizer_task.string_interaction.StringManipulator;
 public class SortOptions {
 	
 	/**
+	 * Compares two character values alphabetically
 	 * @param a char from earlier item in list to be sorted 
 	 * @param b char from later item in list to be sorted
 	 * @return Returns true if items should be swapped alphabetically, false if not e.g. inputs ('Z','A') returns true, inputs ('A','Z') returns false
@@ -46,6 +47,7 @@ public class SortOptions {
 	}
 	
 	/**
+	 * Seperates hyphened words so that they can be compared alphabetically
 	 * @param a Possibly hyphened string item earlier in the list to be sorted
 	 * @param b Possibly hyphened string item later in the list to be sorted
 	 * @return Returns true if items should be swapped alphabetically, false if not e.g. inputs ('Z-Z','Z-A') returns true, inputs ('A-Z','Z-Z') returns false
@@ -85,6 +87,7 @@ public class SortOptions {
 	}
 	
 	/**
+	 * Compares two strings alphabetically
 	 * @param a The earlier string item in a list
 	 * @param b The later string item in a list
 	 * @return Returns true if items should be swapped alphabetically, false if not e.g. inputs ("Zy","Ab") returns true, inputs ("Ab","Zy") returns false
@@ -126,6 +129,7 @@ public class SortOptions {
 	}
 	
 	/**
+	 * Bubble Sort algorithm
 	 * @param toSort String list containing all words to be sorted alphabetically
 	 * @return A String list with all items in English-alphabetical order e.g. input ({"Fizz", "Buzz", "FizzBuzz"}) returns {"Buzz", "Fizz", "FizzBuzz"}
 	 */

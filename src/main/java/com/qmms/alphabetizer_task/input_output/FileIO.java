@@ -13,6 +13,7 @@ public class FileIO {
 	private String encoder;
 
 	/**
+	 * encoder getter
 	 * @return encoder value
 	 */
 	public String getEncoder() {
@@ -20,6 +21,7 @@ public class FileIO {
 	}
 
 	/**
+	 * encoder setter
 	 * @param encoder The new encoder value
 	 */
 	public void setEncoder(String encoder) {

@@ -68,9 +68,9 @@ Using the project:
 4. The code will then display the sorted words followed by the invalid words.
 5. The code will then ask for a directory to save the output.
 6. If it is a valid file path the programme will save the text files SortedWordsOfYourInputFileName.txt, UniqueSortedWordsOfYourInputFileName.txt and InvalidWordsOfYourInputFileName.txt. Otherwise it will ask you for a new file path (typing QUIT here will allow you to continue without saving the files).
-   -SortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words including duplicates.
-   -UniqueSortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words excluding duplicates.
-   -InvalidWordsOfYourInputFileName.txt: Contains a list off all invalid words for the purpose of future tool improvements.
+6.1. SortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words including duplicates.
+6.2. UniqueSortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words excluding duplicates.
+6.3. InvalidWordsOfYourInputFileName.txt: Contains a list off all invalid words for the purpose of future tool improvements.
 7. The code will then ask if you would like to exit the programme, typing Y or QUIT here will exit the programme, typing N will cause the programme to ask you for another input file.
 
 NOTE: 

@@ -57,7 +57,7 @@ private String exceptionChars;
 	 * @return Returns true if all exception characters are correctly formatted
 	 */
 	private boolean regexValidateFormat(String word) {
-		Pattern pattern = Pattern.compile("'{2,}|^-|-{2,}|-$");
+		Pattern pattern = Pattern.compile("'{2,}|^'|^-|-{2,}|-$");
 	    Matcher matcher = pattern.matcher(word);
 	    return !matcher.find();
 	}
@@ -68,7 +68,7 @@ private String exceptionChars;
 	 */
 	private boolean validateFormat(String word) {
 		char hyphen = '-', apostrophe = '\'';
-		if (word.charAt(0) == hyphen || word.charAt(word.length() - 1) == hyphen) {
+		if (word.charAt(0) == hyphen || word.charAt(word.length() - 1) == hyphen || word.charAt(0) == apostrophe) {
 			return false;
 		}
 		else {

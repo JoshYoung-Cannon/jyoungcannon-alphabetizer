@@ -201,3 +201,8 @@ buildNumber.properties
 # End of https://www.gitignore.io/api/java,maven,eclipse,intellij+all,visualstudiocode
 text_files/output/create_new_file.txt
 text_files/output/append_to_file.txt
+test_files/output/append_to_file.txt
+test_files/output/create_new_file.txt
+example/InvalidWordsOfReaper-Man-Amazon-BookDescription.txt
+example/SortedWordsOfReaper-Man-Amazon-BookDescription.txt
+example/UniqueSortedWordsOfReaper-Man-Amazon-BookDescription.txt

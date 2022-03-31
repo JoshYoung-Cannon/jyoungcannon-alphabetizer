@@ -106,3 +106,8 @@ StringManipulator Class updated;
 New methods:
 StringManipulator.wordToUpperCase(word)
 StringManipulator.removeDuplicateChars(sentence, keyChar)
+
+### v1.5.0
+Validator Class updated;
+Class methods updated:
+Validator.validateWord(word) and Validator.validateWordRegex(word) now reject words begining with apostrophes

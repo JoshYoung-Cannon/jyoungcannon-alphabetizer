@@ -44,11 +44,11 @@ public class FileIOTest {
 		ArrayList<String> result = new ArrayList<String>();
 				
 		// Single line input
-		result = FIOTest.loadData("text_files/input/TestInput_SingleLine.txt");
+		result = FIOTest.loadData("test_files/input/TestInput_SingleLine.txt");
 		assertEquals("TestInput1.txt file has been opened successfully.", result.get(0));
 		
 		// Multiple line input
-		result = FIOTest.loadData("text_files/input/TestInput_MultipleLines.txt");
+		result = FIOTest.loadData("test_files/input/TestInput_MultipleLines.txt");
 		assertEquals("The 1st line has been read successfully.", result.get(0));
 		assertEquals("The 2nd line has been read successfully.", result.get(1));
 		
@@ -63,11 +63,11 @@ public class FileIOTest {
 		String[] paragraph2 = {"P2 Line 1", "P2 Line 2", "P2 Line 3"};
 		
 		// Create a new file
-		assertTrue(FIOTest.writeData("text_files/output/create_new_file.txt", paragraph1, false));
+		assertTrue(FIOTest.writeData("test_files/output/create_new_file.txt", paragraph1, false));
 		
 		// Append to a file
-		FIOTest.writeData("text_files/output/append_to_file.txt", paragraph1, false);
-		assertTrue(FIOTest.writeData("text_files/output/append_to_file.txt", paragraph2, true));
+		FIOTest.writeData("test_files/output/append_to_file.txt", paragraph1, false);
+		assertTrue(FIOTest.writeData("test_files/output/append_to_file.txt", paragraph2, true));
 		
 		assertFalse(FIOTest.writeData("folder_does_not_exist/file_does_not_exist.txt", paragraph1, false));
 	}

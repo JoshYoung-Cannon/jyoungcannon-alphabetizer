@@ -45,7 +45,7 @@ Install Eclipse on your computer making sure to install maven at the same time.
 
 A step by step guide to building the project:
 
-1. Go to the project file containing the src folder and pom.xml
+1. Go to the project file containing the src folder and pom.xml: jyoungcannon-alphabetizer
 2. Open a command prompt in the source folder
 3. Check Java 17 & Apache Maven 3.8.5 has been installed
 4. Run the command: mvn clean
@@ -62,7 +62,7 @@ Running the project:
 3. Run the command: java -jar jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar
 
 Using the project:
-1. The programme will ask for a file path to your input text file
+1. The programme will ask for a file path to your input text file.
 2. If it is a valid file path the programme will continue, otherwise it will ask you for a new file path (typing QUIT here will close the programme)
 3. The code will then display all the words from the input file, seperate them into valid and invalid word lists and sort the valid words.
 4. The code will then display the sorted words followed by the invalid words.
@@ -72,6 +72,10 @@ Using the project:
    -UniqueSortedWordsOfYourInputFileName.txt: Contains an alphabetized list of all the valid words excluding duplicates.
    -InvalidWordsOfYourInputFileName.txt: Contains a list off all invalid words for the purpose of future tool improvements.
 7. The code will then ask if you would like to exit the programme, typing Y or QUIT here will exit the programme, typing N will cause the programme to ask you for another input file.
+
+NOTE: 
+An example text file has been included in the jyoungcannon-alphabetizer\example folder and can be called by typing ..\example\Reaper-Man-Amazon-BookDescription.txt when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder.
+If desired the example folder can be used to hold the output files using the file path ..\example when jyoungcannon-alphabetizer-0.0.1-SNAPSHOT.jar is run from the target folder.
 
 ## Built With
 
